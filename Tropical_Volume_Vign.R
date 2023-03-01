@@ -1,3 +1,5 @@
+source("THAR_funcs.R")
+
 # Sampling and Volume estimation
 set.seed(123)
 P<-matrix(c(0,-2,3,0,-2,5,0,1,0,0,2,2),4,3,TRUE)
@@ -54,5 +56,5 @@ Vol_P<-count1/10000*Vol_B_r
 
 # Volume using R functions
 x0<-c(0,0,0)
-Trop_Volume(B_r,P,x0,1000,50,d=ncol(P),B_p[[2]])
-
+Vol_p<-Trop_Volume(B_r,P,x0,1000,50,d=ncol(P),B_p[[2]])
+Vol_p
