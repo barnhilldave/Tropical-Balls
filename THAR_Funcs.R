@@ -510,8 +510,6 @@ trop_bal.vert<-function(x,d,dm){
 ################################################################################
 Trop_Volume<-function(B,P,x0,S,i,d=ncol(P),R){
   count<-0
-  har_points<-matrix(0,S,d,TRUE)
-  har_points1<-matrix(0,0,d)
   for (i in (1:S)){
     print(i)
     x<-TropicalPolytope.extrapolation.HAR_v4(B, x0, I = i,k=(d-1))
@@ -526,7 +524,7 @@ Trop_Volume<-function(B,P,x0,S,i,d=ncol(P),R){
   r<-count/sze
   VolB<-(d)*R^(d-1)
   VolP<-r*VolB
-  return(list(r,VolB,VolP,har_points,har_points1))
+  return(list(r,VolB,VolP))
 }
 
 ##########Drawing 3D hyperplanes for a given set of vertices ############
